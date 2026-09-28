@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rizalene-huyuka-</title>
+    <meta name="description" content="気ままに過ごす為の日記">
+    <link rel="shortcut icon" href="images/logo complete.png">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="site-title">
+            <a href="index.html"><img src="images/logo complete.png" alt="logo"></a>
+        </h1>
+
+        <div class="header-cart">
+            <a href="purchase.html">
+                <img src="images/cart.png" alt="カート">
+            </a>
+        </div>
+
+
+        <nav id="navi">
+            <ul class="nav-menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+            <ul class="nav-sns">
+                <li><a href="https://www.instagram.com/rizalene_huyuka/" target="_blank"
+                        rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://www.facebook.com/brizalene" target="_blank" rel="noopener noreferrer">Facebook</a>
+                </li>
+                <li><a href="https://www.youtube.com/@rizaleneb1230" target="_blank"
+                        rel="noopener noreferrer">Youtube</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-btn">
+            <img src="images/hamburgermenu.png" alt="menu">
+        </button>
+
+        <div class="mask"></div>
+
+    </header>
+
+
+
+    <!-------------------------- PURCHASE ここから購入ページ--------------------------------->
+
+    <main class="purchase-wrapper">
+
+
+        <h2 class="page-title">ご購入手続き</h2>
+
+
+
+        <!-------------------------------- STEP 1 カート-------------------------------------->
+
+        <section id="purchase-step-cart" class="purchase-step">
+
+            <div class="purchase-cart-title">
+                <img src="images/cart.png" alt="カート">
+                <h3 class="purchase-step-title">カートの中身</h3>
+            </div>
+
+            <!-- 商品がここにJavaScriptで入る -->
+
+            <div id="purchase-cart-items" class="purchase-cart-items">
+
+            </div>
+
+
+            <!-- カートが空の場合 -->
+
+            <p id="purchase-cart-empty" class="purchase-empty">
+
+                カートに商品がありません。
+
+            </p>
+
+
+            <!-- 合計 -->
+
+            <div class="purchase-total">
+
+                <span>合計</span>
+
+                <strong id="purchase-cart-total">
+                    ¥0
+                </strong>
+
+            </div>
+
+
+            <!-- ボタン -->
+
+            <div class="purchase-buttons">
+
+                <a href="gallery.html" class="purchase-back-btn">
+
+                    買い物を続ける
+
+                </a>
+
+
+                <button type="button" id="go-customer" class="purchase-next-btn">
+
+                    購入手続きへ
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!------------------------------- STEP 2 お客様情報 --------------------------------------->
+
+        <section id="purchase-step-customer" class="purchase-step purchase-step-hidden">
+
+
+            <h3 class="purchase-step-title">
+                お客様情報の入力
+            </h3>
+
+
+            <form id="purchase-form">
+
+
+                <!-- お名前 -->
+
+                <div class="purchase-form-item">
+
+                    <label for="purchase-name">
+                        お名前
+                    </label>
+
+                    <input type="text" id="purchase-name" name="name" placeholder="例）山田 花子" required>
+
+                </div>
+
+
+
+                <!-- メール -->
+
+                <div class="purchase-form-item">
+
+                    <label for="purchase-email">
+                        メールアドレス
+                    </label>
+
+                    <input type="email" id="purchase-email" name="email" placeholder="例）example@mail.com" required>
+
+                </div>
+
+
+
+                <!-- 郵便番号 -->
+
+                <div class="purchase-form-item">
+
+                    <label for="purchase-postal">
+                        郵便番号
+                    </label>
+
+                    <input type="text" id="purchase-postal" name="postal" placeholder="例）123-4567" required>
+
+                </div>
+
+
+
+                <!-- 住所 -->
+
+                <div class="purchase-form-item">
+
+                    <label for="purchase-address">
+                        住所
+                    </label>
+
+                    <input type="text" id="purchase-address" name="address" placeholder="例）東京都○○区○○1-2-3" required>
+
+                </div>
+
+
+
+                <!-- 電話番号 -->
+
+                <div class="purchase-form-item">
+
+                    <label for="purchase-phone">
+                        電話番号
+                    </label>
+
+                    <input type="tel" id="purchase-phone" name="phone" placeholder="例）090-1234-5678" required>
+
+                </div>
+
+
+
+                <!-- ボタン -->
+
+                <div class="purchase-buttons">
+
+                    <button type="button" id="back-cart" class="purchase-back-btn">
+
+                        カートに戻る
+
+                    </button>
+
+
+                    <button type="submit" class="purchase-next-btn">
+
+                        注文内容を確認する
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!--------------------------------------- STEP 3 注文内容確認 ------------------------------>
+
+        <section id="purchase-step-confirm" class="purchase-step purchase-step-hidden">
+
+
+            <h3 class="purchase-step-title">
+                注文内容の確認
+            </h3>
+
+
+            <!-- 注文商品 -->
+
+            <div class="purchase-confirm-box">
+
+                <h4>ご注文商品</h4>
+
+
+                <div id="purchase-confirm-items">
+
+                    <!-- JavaScriptで商品を表示 -->
+
+                </div>
+
+
+                <div class="purchase-confirm-total">
+
+                    <span>合計</span>
+
+                    <strong id="purchase-confirm-total">
+                        ¥0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- お客様情報 -->
+
+            <div class="purchase-confirm-box">
+
+                <h4>お客様情報</h4>
+
+
+                <div class="purchase-customer-info">
+
+
+                    <div class="purchase-info-row">
+
+                        <span>お名前</span>
+
+                        <strong id="confirm-name"></strong>
+
+                    </div>
+
+
+                    <div class="purchase-info-row">
+
+                        <span>メールアドレス</span>
+
+                        <strong id="confirm-email"></strong>
+
+                    </div>
+
+
+                    <div class="purchase-info-row">
+
+                        <span>郵便番号</span>
+
+                        <strong id="confirm-postal"></strong>
+
+                    </div>
+
+
+                    <div class="purchase-info-row">
+
+                        <span>住所</span>
+
+                        <strong id="confirm-address"></strong>
+
+                    </div>
+
+
+                    <div class="purchase-info-row">
+
+                        <span>電話番号</span>
+
+                        <strong id="confirm-phone"></strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ボタン -->
+
+            <div class="purchase-buttons">
+
+
+                <button type="button" id="back-customer" class="purchase-back-btn">
+
+                    入力内容を修正する
+
+                </button>
+
+
+                <button type="button" id="purchase-complete" class="purchase-next-btn">
+
+                    購入を確定する
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!----------------------------------- STEP 4 購入完了---------------------------- -->
+
+        <section id="purchase-step-complete" class="purchase-step purchase-step-hidden">
+
+
+            <div class="purchase-complete">
+
+
+                <div class="purchase-check">
+                    ✓
+                </div>
+
+
+                <h3>
+                    ご購入ありがとうございます！
+                </h3>
+
+
+                <p>
+                    ご注文を受け付けました。
+                </p>
+
+
+                <p>
+                    確認メールをお送りしましたので<br>
+                    ご確認ください。
+                </p>
+
+
+                <div class="purchase-complete-buttons">
+
+                    <a href="index.html" class="purchase-next-btn">
+
+                        トップページへ戻る
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!--------------------------------------- FOOTER 今まで使っているfooterをここにそのまま入れる--------------------------------- -->
+
+    <footer class="footer">
+        <a href="#"><img src="images/Rizalene-huyuka-complete.png" alt="back to home page"></a>
+
+        <div id="contact">
+            <h2>Contact</h2>
+            <form action="https://formsubmit.co/Rizalene-huyuka-@outlook.jp" method="POST" name="contact-form">
+                <dl>
+                    <dt><label for="realname" class="texfield_label">お名前</label></dt>
+                    <dd><input type="text" id="real_name" name="real_your-name" placeholder="例） 雪野 太郎" required></dd>
+                    <dt><label for="realname" class="texfield_label">カタカナ</label></dt>
+                    <dd><input type="text" id="real_kana" name="real_kana" placeholder="例）ユキノ タロウ" required>
+                    </dd>
+                    <dt><label for="email" class="texfield_label">e-mail</label></dt>
+                    <dd><input type="email" id="mail" name="mail" placeholder="例）Rizalene-huyuka-@〇〇〇〇.co.jp" required>
+                    </dd>
+                    <dt>お問い合わせ項目</dt>
+                    <dd>
+                        <select name="category" id="category" required>
+                            <option value="">選択してください</option>
+                            <option value="仕事の依頼">サイト制作について</option>
+                            <option value="ご質問">ハンドメイドについて</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </dd>
+                    <dt><label for="message">内容欄</label></dt>
+                    <dd><textarea id="message" name="message" placeholder="具体的な内容をご記入ください" required></textarea></dd>
+                </dl>
+                <div class="button"><input type="submit" value="送信"></div>
+            </form>
+        </div>
+
+        <p>&copy; 2026 Rizalene-huyuka-</p>
+
+    </footer>
+
+    <a class="to-top" href="index.html"></a>
+
+
+
+
+    <!-----------------------------JavaScript------------------------------>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/purchase.js"></script>
+
+
+</body>
+
+</html>
